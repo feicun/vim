@@ -62,6 +62,12 @@ sudo apt-get install ctags
 sudo apt-get install build-essential cmake python-dev  #编译YCM自动补全插件依赖
 sudo apt-get install silversearcher-ag
 
+# Arch
+sudo pacman -S base-devel
+sudo pacman -S ctags
+sudo pacman -S cmake
+Install silver-searcher-git from AUR
+
 # centos
 sudo yum install python-devel.x86_64
 sudo yum groupinstall 'Development Tools'
