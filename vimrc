@@ -59,7 +59,7 @@ filetype plugin indent on
 
 " 文件修改之后自动载入
 set autoread
-" 启动的时候不显示那个援助索马里儿童的提示
+" 启动的时候不显示那个援助乌干达儿童的提示
 set shortmess=atI
 
 " 备份,到另一个位置. 防止误删, 目前是取消备份
@@ -239,6 +239,15 @@ function! NumberToggle()
   endif
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
+
+" 防止tmux下vim的背景色显示异常
+" Refer: http://sunaku.github.io/vim-256color-bce.html
+if &term =~ '256color'
+  " disable Background Color Erase (BCE) so that color schemes
+  " render properly when inside 256-color tmux and GNU screen.
+  " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+  set t_ut=
+endif
 
 "==========================================
 " FileEncode Settings 文件编码,格式
