@@ -116,7 +116,7 @@ Plug 'thinca/vim-quickrun'
 
 " git
 " fugitive
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 " gitgutter
 Plug 'airblade/vim-gitgutter'
 
