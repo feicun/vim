@@ -28,7 +28,7 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " 移动光标到插件名上, 使用'#'快速跳转到每个插件的配置处
-
+"
 " Dockerfile highlight
 Plug 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 
@@ -38,7 +38,7 @@ Plug 'scrooloose/syntastic'
 " Group dependencies, vim-snippets depends on ultisnips
 " 代码片段快速插入 (snippets中,是代码片段资源,需要学习)
 " Snippets are separated from the engine. Add this if you want them:
-" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " auto complete
 " 代码自动补全
@@ -138,6 +138,8 @@ Plug 'altercation/vim-colors-solarized'
 " molokai
 " 主题 molokai
 Plug 'tomasr/molokai'
+" Theme tender
+Plug 'jacoborus/tender'
 
 
 " nav
@@ -283,7 +285,7 @@ call plug#end()
     let g:syntastic_warning_symbol='>'
     let g:syntastic_check_on_open=1
     let g:syntastic_check_on_wq=0
-    let g:syntastic_enable_highlighting=1
+    " let g:syntastic_enable_highlighting=1
 
     " checkers
     " 最轻量
@@ -597,6 +599,7 @@ call plug#end()
     if !exists('g:airline_symbols')
         let g:airline_symbols = {}
     endif
+    let g:airline_theme = 'tender'
     let g:airline_left_sep = '▶'
     let g:airline_left_alt_sep = '❯'
     let g:airline_right_sep = '◀'
@@ -681,6 +684,7 @@ call plug#end()
 
 " Vim Workspace Controller
 " ctrlspace {{{
+    map <leader>b :CtrlSpace<CR>
     let g:airline_exclude_preview = 1
     hi CtrlSpaceSelected guifg=#586e75 guibg=#eee8d5 guisp=#839496 gui=reverse,bold ctermfg=10 ctermbg=7 cterm=reverse,bold
     hi CtrlSpaceNormal   guifg=#839496 guibg=#021B25 guisp=#839496 gui=NONE ctermfg=12 ctermbg=0 cterm=NONE
@@ -769,8 +773,11 @@ call plug#end()
     let g:go_highlight_build_constraints = 1
 
     let g:go_fmt_fail_silently = 1
-    " let g:go_fmt_command = "goimports"
-    " let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+    let g:go_fmt_command = "goimports"
+    " let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
+    let g:syntastic_go_checkers = ['go']
+    " Forbid syntastic to check go file
+    " let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " }}}
 
 " markdown {{{
