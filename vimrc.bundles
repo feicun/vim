@@ -118,7 +118,7 @@ Plug 'thinca/vim-quickrun'
 
 " git
 " fugitive
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 " gitgutter
 Plug 'airblade/vim-gitgutter'
 
@@ -145,6 +145,8 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'tomasr/molokai'
 " 主题 tender
 Plug 'jacoborus/tender.vim'
+" 主题 gruvbox
+Plug 'morhetz/gruvbox'
 
 
 " nav
